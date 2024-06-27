@@ -5,7 +5,6 @@
  * @email 756684177@qq.com
  * @date 2022/9/11 15:56
  */
-// 令牌签发者 // 令牌签发者 // 令牌签发者 // 令牌签发者 // 令牌签发者
 return [
     'iss' => 'yangchao/jwt', // 令牌签发者
     'signer' => \yangchao\jwt\Config::ALGO_HS256,//加密类型
