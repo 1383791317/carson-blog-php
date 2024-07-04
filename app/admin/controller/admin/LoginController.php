@@ -18,4 +18,8 @@ class LoginController extends BaseController
     {
         return ApiReturn::success(UserLogic::getInstance()->refreshToken());
     }
+    public function logout()
+    {
+        return ApiReturn::success(UserLogic::getInstance()->logout());
+    }
 }

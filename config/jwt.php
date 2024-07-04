@@ -8,11 +8,11 @@
 return [
     'iss' => 'yangchao/jwt', // 令牌签发者
     'signer' => \yangchao\jwt\Config::ALGO_HS256,//加密类型
-    'nbf' => 5,// 某个时间点后才能访问，单位秒。（如：5 表示当前时间5秒后TOKEN才能使用）
-    'expires_at' => 3600, //过期时间，单位：秒
+    'nbf' => 3,// 某个时间点后才能访问，单位秒。（如：5 表示当前时间5秒后TOKEN才能使用）
+    'expires_at' => 10, //过期时间，单位：秒
     'refresh_disable' => false,//是否禁用刷新令牌
     'refresh_ttl' => 86400,//刷新令牌过期时间，单位：秒
-    'leeway' => 60, // 容错时间差，单位：秒
+    'leeway' => 2, // 容错时间差，单位：秒
     'is_single_device' => true, // 是否开启单设备登录
     'device_verify' => 'ua', // 单设备验证方式，可选值：ua(User-Agent)、ip(客户端IP)、ip_ua(IP+UA)
     'secret_key' => 'udiyquqjgxtgszjkpuvdmvowziyprdyi', //HS256 密钥

@@ -34,4 +34,9 @@ class UserLogic extends BaseLogic
     {
         return (new JWTAuth(Config::get('jwt')))->refreshToken(CommonLogic::getInstance()->getAuthorizationToken());
     }
+
+    public function logout()
+    {
+        return (new JWTAuth(Config::get('jwt')))->addBlackList(CommonLogic::getInstance()->getAuthorizationToken());
+    }
 }

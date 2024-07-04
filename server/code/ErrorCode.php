@@ -25,5 +25,6 @@ class ErrorCode
         self::validate_operation_error => '操作验证异常：%s',
         self::validate_param_error => '参数异常：%s',
         self::operation_fail => '操作失败：%s',
+        self::user_token_error => '身份信息验证失败：%s',
     ];
 }

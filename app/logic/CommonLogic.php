@@ -16,6 +16,7 @@ class CommonLogic extends BaseLogic
             $token = $matches[1];
         }
         if (!$token) ClientException::throwException(ErrorCode::validate_operation_error,'token不存在');
+        if (strlen($token) < 100) ClientException::throwException(ErrorCode::validate_operation_error,'token格式错误');
         return $token;
     }
 }

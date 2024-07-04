@@ -48,6 +48,7 @@ class CentralizedException extends \Exception
     {
         return $this->description;
     }
+
     /**
      * 设置发送通知
      * @return $this
@@ -154,7 +155,7 @@ class CentralizedException extends \Exception
      */
     protected static function getCodeMessage($code, $message)
     {
-        $message = ($message && is_string($message)) ? $message : ErrorCode::$message[$code];
-        return call_user_func_array('sprintf', [ErrorCode::$message[$code], $message]);
+        $message = ($message && is_string($message)) ? $message : (ErrorCode::$message[$code] ?? ErrorCode::$message[ErrorCode::server_undefined_code]);
+        return call_user_func_array('sprintf', [ErrorCode::$message[$code] ?? ErrorCode::$message[ErrorCode::server_undefined_code], $message]);
     }
 }
