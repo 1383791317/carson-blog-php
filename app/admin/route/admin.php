@@ -5,7 +5,7 @@ Route::post('login', '\app\admin\controller\admin\LoginController@act');
 Route::post('refresh_token', '\app\admin\controller\admin\LoginController@refreshToken');
 
 Route::group(function (){
-    Route::post('logout', '\app\admin\controller\admin\LoginController@logout');
+    Route::get('logout', '\app\admin\controller\admin\LoginController@logout');
 
     Route::post('upload/image', '\app\admin\controller\article\CommonController@uploadImage');
 
