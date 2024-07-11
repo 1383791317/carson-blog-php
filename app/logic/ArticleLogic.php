@@ -13,9 +13,9 @@ class ArticleLogic extends BaseLogic
 {
     public function getPaginateList($param)
     {
-        return ArticleModel::query()->paginate($param['page_size'] ?? null)->each(function ($item){
+        return ArticleModel::query()->order('id', 'desc')->with('tags')->paginate($param['page_size'] ?? null)->each(function ($item){
             $item->category_name = $item->category?->name;
-            $item->tags = ArticleTagModel::query()->whereIn('id', $item->tags)->column('name');
+            $item->tags = $item->tags->column('name');
         });
     }
     public function saveArticle($param)
