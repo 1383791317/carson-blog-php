@@ -22,7 +22,7 @@ class ArticleController extends BaseController
                 $query->name('article_tag_relation')->field('article_id')->where('article_tag_id', $request->get('tag_id'));
             });
         }
-        return ApiReturn::paginate($model->paginate(100),ArticleListTransform::class);
+        return ApiReturn::paginate($model->order('id','desc')->paginate(intval($request->get('limit'))),ArticleListTransform::class);
     }
 
     public function detail(Request $request)
