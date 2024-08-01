@@ -25,7 +25,8 @@
         "topthink/think-orm": "^3.0",
         "topthink/think-filesystem": "^2.0",
         "topthink/think-multi-app": "^1.0",
-        "yangchao/php-jwt": "1.0.3"
+        "yangchao/php-jwt": "1.0.3",
+        "guzzlehttp/guzzle": "^7.9"
     },
     "require-dev": {
         "symfony/var-dumper": ">=4.2",
